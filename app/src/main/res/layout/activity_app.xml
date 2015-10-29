@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_selector"
         android:text="@string/backup"
-        android:shadowColor="@color/Blue"
+        android:shadowColor="#ff000000"
         android:shadowRadius="4.0"
         android:shadowDy="2.0"
         android:shadowDx="2.0"
@@ -23,7 +23,7 @@
         android:id="@+id/relativeLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/Blue"
+        android:background="@android:color/black"
         android:padding="2.0dip" >
 
         <TextView
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="5.0dip"
-            android:shadowColor="@color/Blue"
+            android:shadowColor="#ff000000"
             android:shadowDx="3.0"
             android:shadowDy="3.0"
             android:drawableLeft="@drawable/app"

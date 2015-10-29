@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity
   private ImageView imageViewRound;
 
   ShareActionProvider mShareActionProvider;
-  String TITLES[] = {"Accueil","Profile","A propos","Deconnection"};
+  String TITLES[] = {"Accueil","Profile","GPS","Deconnection"};
   int ICONS[] = {R.drawable.home,R.drawable.cloud,R.drawable.about,R.drawable.logout};
   private Toolbar toolbar;
   RecyclerView mRecyclerView;
@@ -336,16 +336,14 @@ public class MainActivity extends ActionBarActivity
             }
             //Toast.makeText(MainActivity.this,"The Item Clicked is: 2",Toast.LENGTH_SHORT).show();
             case 3: {
-              startActivity(new Intent(MainActivity.this, About.class));
+              startActivity(new Intent(MainActivity.this, LocationActivity.class));
               //finish();
               return true;
             }
             case 4: {
-              final AppSharedPreferences preferences = AppSharedPreferences.newInstance(MainActivity.this);
-              preferences.clearSignUpInformation();
+              //preferences.clearSignUpInformation();
               //System.exit(0);
               startActivity(new Intent(MainActivity.this, LoginActivity.class));
-
               //finish();
               return true;
             }

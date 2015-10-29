@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseQuery;
@@ -79,33 +78,22 @@ public class LoginActivity extends Activity {
         EditText text1 = (EditText) findViewById(R.id.Pass);
         pass = text1.getText().toString();
 
-        if (email == null) {
-            Toast.makeText(getApplicationContext(), "Les informations que vous avez entré ne sont pas valides", Toast.LENGTH_SHORT).show();
-        } else {
-            ParseQuery<User> query = ParseQuery.getQuery("User");
-            query.whereEqualTo("mail", email);
-            query.findInBackground(new FindCallback<User>() {
-                @Override
-                public void done(List<User> parseObjects, com.parse.ParseException e) {
-                    if (e == null) {
-                        Log.d("user", "Retrieved " + parseObjects.size() + " user");
-                        //signUpInfo = login;
-                        //preferences.saveSignUpName(signUpInfo);
-                        if (parseObjects.size() == 0) {
-                            Toast.makeText(getApplicationContext(), "Les informations que vous avez entré ne sont pas valides", Toast.LENGTH_SHORT).show();
-                        } else {
-                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                            finish();
-                        }
-
-                    } else {
-                        Log.d("score", "Error: " + e.getMessage());
-                    }
+        ParseQuery<User> query = ParseQuery.getQuery("User");
+        query.whereEqualTo("mail", "User");
+        query.findInBackground(new FindCallback<User>() {
+            @Override
+            public void done(List<User> parseObjects, com.parse.ParseException e) {
+                if (e == null) {
+                    Log.d("score", "Retrieved " + parseObjects.size() + " scores");
+                    //signUpInfo = login;
+                    //preferences.saveSignUpName(signUpInfo);
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    finish();
+                } else {
+                    Log.d("score", "Error: " + e.getMessage());
                 }
-            });
-        }
-
-
+            }
+        });
 
         /*String result = "";
         InputStream isr = null;

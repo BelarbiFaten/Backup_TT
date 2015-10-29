@@ -9,6 +9,7 @@ import com.parse.ParseUser;
 
 import amine.daoues.backup_tt.data.Bookmarks;
 import amine.daoues.backup_tt.data.Call;
+import amine.daoues.backup_tt.data.Gps;
 import amine.daoues.backup_tt.data.Sms;
 import amine.daoues.backup_tt.data.User;
 
@@ -22,7 +23,7 @@ public class BackUpTTApplication extends Application {
 
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "Y01sLeGPNVCaSov4Yr7nR76zRp7HWf6yDtTBFVHS", "ZHzNTE8Xc0fEBs0P4XiEij1cUp1S9b9AbzelWiOi");
+        Parse.initialize(this, "fjbsTyf6Ek5lqjkY0aaMflnaAehGzAWruAnGOVsF", "FltDZK7uLi2WqjM1Houkqr5t4ELsz8Z0aYVkqT8S");
 
         ParseACL defaultACL = new ParseACL();
         ParseACL.setDefaultACL(defaultACL, true);
@@ -35,6 +36,7 @@ public class BackUpTTApplication extends Application {
         ParseObject.registerSubclass(Sms.class);
         ParseObject.registerSubclass(Bookmarks.class);
         ParseObject.registerSubclass(Call.class);
+        ParseObject.registerSubclass(Gps.class);
 
         // Enable Local Datastore.
         /*Parse.enableLocalDatastore(this);

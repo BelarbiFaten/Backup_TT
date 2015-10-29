@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <fragment class="amine.daoues.backup_tt.FetchSMS$TitlesFragment"
+    <fragment class="com.BackupAndRestore.FetchSMS$TitlesFragment"
         android:id="@+id/titles" android:layout_weight="1"
         android:layout_width="0px" android:layout_height="match_parent" />
 

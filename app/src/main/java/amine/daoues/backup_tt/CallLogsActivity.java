@@ -198,7 +198,7 @@ public class CallLogsActivity extends Activity
             final Call newCall = new Call("Call");
             newCall.setDate(str5);
             newCall.setDuration(str8);
-            //newCall.setName(str4);
+            newCall.setName(str4);
             newCall.setNeww(str7);
             newCall.setNumber(str3);
             newCall.setType(str6);
